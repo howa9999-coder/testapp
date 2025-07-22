@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guess Who? Game</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</head>
+<body>
+
+  <div id="welcome-screen" class="centered-screen section">
+    <h1>Welcome to Guess Who?</h1>
+    <input type="text" id="playerNameInput" placeholder="Your name" />
+    <button id="startBtn" class="fun-button">Start Game</button>
+  </div>
+
+  <div id="game-screen" class="hidden section">
+    <h1>👀 Who's This?</h1>
+
+    <div class="scoreboard">
+      <span id="score">Score: 0</span>
+      <span id="attempts">Attempts: 0</span>
+      <span id="timer">Time Left: 10s</span>
+    </div>
+
+    <button id="resetBtn">🔁 Reset Score</button>
+
+    <div class="game-container">
+      <div id="image-container">
+        <img id="mysteryImage" src="" alt="Guess who?" />
+      </div>
+
+      <div id="choices" class="choices"></div>
+      <div id="result" class="result"></div>
+    </div>
+  </div>
+
+  <div id="final-screen" class="hidden centered-screen section">
+    <h2>Game Over!</h2>
+    <p id="finalMessage"></p>
+    <button id="playAgainBtn" class="fun-button">Play Again</button>
+    <!--<button id="downloadBtn">📥 Download All Pictures</button>-->
+  </div>
+
+  <audio id="welcomeSound" src="sounds/welcome.mp3" preload="auto"></audio>
+  <audio id="correctSound" src="sounds/correct.mp3" preload="auto"></audio>
+  <audio id="wrongSound" src="sounds/wrong.mp3" preload="auto"></audio>
+  <audio id="finalScoreSound" src="sounds/yay.mp3"></audio>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
