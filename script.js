@@ -1,7 +1,7 @@
 const cousins = [
-  { name: "Mariem", images: ["images/mariem1.jpg"] },
-  { name: "Khadija", images: ["images/khadija1.jpg", "images/khadija2.jpg", "images/khadija3.jpg", "images/khadija4.jpg", "images/khadija5.jpg"] },
-  { name: "Abd El Rahman", images: ["images/abd1.jpg", "images/abd2.jpg", "images/abd3.jpg", "images/abd4.jpg"] }
+  { name: "Mariem", images: ["images/mariem1.jpg", "images/mariem2.jpg"] },
+  { name: "Khadija", images: ["images/khadija1.jpg", "images/khadija2.jpg", "images/khadija3.jpg", "images/khadija4.jpg", "images/khadija5.jpg", "images/khadija6.jpg", "images/khadija8.jpg"] },
+  { name: "Abd El Rahman", images: ["images/abd1.jpg", "images/abd2.jpg", "images/abd3.jpg", "images/abd4.jpg", "images/abd6.jpg", "images/abd7.jpg"] }
 ];
 
 /* const effects = ["blurred", "pixelated", "cropped"];
@@ -191,12 +191,18 @@ function endGame() {
   finalScreen.classList.remove("hidden");
   finalScoreSound.play();
   let compliment = "";
-  if (score === maxAttempts) compliment = "Perfect! You're a true family expert! 🎉";
-  else if (score >= maxAttempts * 0.7) compliment = "Great job! You know your cousins well! 😊";
-  else if (score >= maxAttempts * 0.4) compliment = "Not bad! Keep trying and you’ll get better! 😉";
-  else compliment = "Better luck next time! Family is about fun anyway! 😄";
 
-  finalMessage.innerText = `${playerName}, your final score is ${score} out of ${maxAttempts}. ${compliment}`;
+if (score === maxAttempts) {
+  compliment = "👑 Sibling Mastermind! You know your siblings better than anyone! 💖";
+} else if (score >= maxAttempts * 0.7) {
+  compliment = "👏 Great job! You really know your siblings' faces! 😄";
+} else if (score >= maxAttempts * 0.4) {
+  compliment = "😅 Not bad! Maybe spend a bit more time looking through sibling selfies! 🧩";
+} else {
+  compliment = "😂 Oops! Are you sure you're related? Just kidding — siblings are full of surprises! 💕";
+}
+
+  finalMessage.innerText = `<b> ${playerName} </b>, your final score is <b> ${score} </b> out of ${maxAttempts}. <br> ${compliment}`;
 }
 
 startBtn.onclick = startGame;
